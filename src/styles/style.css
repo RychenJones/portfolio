@@ -186,6 +186,12 @@ h1 {
   line-height: 1.6;
 }
 
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .btn {
   display: inline-block;
   padding: 11px 22px;
@@ -198,6 +204,12 @@ h1 {
 }
 .btn:hover {
   filter: brightness(1.1);
+}
+
+.btn-secondary {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
 }
 
 /* ---------- Project list ---------- */
