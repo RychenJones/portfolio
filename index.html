@@ -1,81 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rychen Jones | Software Engineer</title>
-<meta name="description" content="Software engineering student building full-stack web apps. Open to internships.">
-<meta name="theme-color" content="#04060C">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="src/styles/style.css" rel="stylesheet">
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-barbell" viewBox="0 0 24 24"><path d="M2 12h1M6 8H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zM9 12h6M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1zM18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M22 12h-1"/></symbol>
-  <symbol id="i-code" viewBox="0 0 24 24"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></symbol>
-  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M17 7L7 17M8 7h9v9"/></symbol>
-</svg>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rychen Jones | Software Engineer</title>
+    <meta
+      name="description"
+      content="Software engineering student building full-stack web apps. Open to internships."
+    />
+    <meta name="theme-color" content="#04060C" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/styles/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-barbell" viewBox="0 0 24 24">
+        <path
+          d="M2 12h1M6 8H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zM9 12h6M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1zM18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M22 12h-1"
+        />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16" />
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M17 7L7 17M8 7h9v9" />
+      </symbol>
+    </svg>
 
-<div class="page">
-  <!-- Animated background: soft drifting colour blobs -->
-  <div class="blobs" aria-hidden="true">
-    <span class="blob b1"></span>
-    <span class="blob b2"></span>
-  </div>
-
-  <header class="nav">
-    <a class="brand" href="#">Rychen Jones</a>
-    <nav aria-label="Primary">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main class="hero">
-    <section class="intro" id="about">
-      <h1>Hi, I'm Rychen.</h1>
-      <p>Software engineering student building full-stack web apps. Open to internships.</p>
-      <!-- TODO: replace with your real email address -->
-      <a class="btn" id="contact" href="mailto:you@example.com">Contact me</a>
-    </section>
-
-    <section class="work" id="work" aria-labelledby="work-title">
-      <div class="work-head">
-        <h2 id="work-title">Selected work</h2>
-        <!-- TODO: link to a full projects page or your GitHub profile -->
-        <a href="#">View all</a>
+    <div class="page">
+      <!-- Animated background: soft drifting colour blobs -->
+      <div class="blobs" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
       </div>
-      <ul>
-        <li>
-          <!-- TODO: point each project to its live site or repo -->
-          <a class="pr" href="https://repjournal.rychenjones.com/pages/dashboard.html" target="_blank">
-            <span class="tile"><svg aria-hidden="true"><use href="#i-barbell"/></svg></span>
-            <span><strong>RepJournal</strong><small>Workout tracker · JavaScript, PocketBase</small></span>
-            <svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-        </li>
-        <li>
-          <a class="pr" href="#">
-            <span class="tile"><svg aria-hidden="true"><use href="#i-code"/></svg></span>
-            <span><strong>Project two</strong><small>Short description · Tag</small></span>
-            <svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-        </li>
-        <li>
-          <a class="pr" href="#">
-            <span class="tile"><svg aria-hidden="true"><use href="#i-grid"/></svg></span>
-            <span><strong>Project three</strong><small>Short description · Tag</small></span>
-            <svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </main>
-</div>
 
-</body>
+      <header class="nav">
+        <a class="brand" href="#">Rychen Jones</a>
+        <nav aria-label="Primary">
+          <a href="/pages/projects.html">Projects</a>
+          <a href="/pages/about.html">About</a>
+          <a href="/pages/contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main class="hero">
+        <section class="intro" id="about">
+          <h1>Hi, I'm Rychen.</h1>
+          <p>
+            Software engineering student building full-stack web apps. Looking
+            for internships.
+          </p>
+          <a class="btn" id="contact" href="mailto:rychen.p.jones@gmail.com"
+            >Contact me</a
+          >
+        </section>
+
+        <section class="work" id="work" aria-labelledby="work-title">
+          <div class="work-head">
+            <h2 id="work-title">Selected work</h2>
+            <!-- TODO: link to a full projects page or your GitHub profile -->
+            <a href="#">View all</a>
+          </div>
+          <ul>
+            <li>
+              <!-- TODO: point each project to its live site or repo -->
+              <a
+                class="pr"
+                href="https://repjournal.rychenjones.com"
+                target="_blank"
+              >
+                <span class="tile"
+                  ><svg aria-hidden="true"><use href="#i-barbell" /></svg>
+                </span>
+                <span
+                  ><strong>RepJournal</strong
+                  ><small
+                    >Workout tracker · JavaScript, PocketBase, Google
+                    Cloud</small
+                  ></span
+                >
+                <svg class="go" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="pr"
+                href="https://trailview.rychenjones.com"
+                target="_blank"
+              >
+                <span class="tile"
+                  ><svg aria-hidden="true"><use href="#i-grid" /></svg>
+                </span>
+                <span
+                  ><strong>TrailView</strong
+                  ><small>Trail Explorer · JavaScript, Netlify</small></span
+                >
+                <svg class="go" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </li>
+            <li>
+              <a 
+                class="pr"
+                href="https://github.com/RychenJones/expense-tracker.git"
+                target="_blank"
+              >
+                <span class="tile"
+                  ><svg aria-hidden="true"><use href="#i-code" /></svg>
+                </span>
+                <span
+                  ><strong>Expense Tracker</strong
+                  ><small>Java Program · Classes, password hashing</small></span
+                >
+                <svg class="go" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

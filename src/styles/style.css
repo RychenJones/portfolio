@@ -3,16 +3,20 @@
    ========================================================== */
 
 :root {
-  --ink: #E8EEF7;
-  --muted: #9FB1CC;
-  --faint: #6F829E;
-  --accent: #85B7EB;
-  --on-accent: #04162B;
-  --line: rgba(255, 255, 255, .12);
-  --hover: rgba(255, 255, 255, .06);
+  --ink: #e8eef7;
+  --muted: #9fb1cc;
+  --faint: #6f829e;
+  --accent: #85b7eb;
+  --on-accent: #04162b;
+  --line: rgba(255, 255, 255, 0.12);
+  --hover: rgba(255, 255, 255, 0.06);
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -22,12 +26,21 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   line-height: 1.5;
-  background-color: #04060C;
+  background-color: #04060c;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -45,7 +58,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   padding: 24px clamp(20px, 5vw, 56px) 48px;
-  background: linear-gradient(160deg, #04060C 0%, #08101F 50%, #0C1B38 100%);
+  background: linear-gradient(160deg, #04060c 0%, #08101f 50%, #0c1b38 100%);
 }
 
 .blobs {
@@ -63,24 +76,56 @@ a:focus-visible {
   filter: blur(80px);
   will-change: transform;
 }
-.b1 { width: 48vmax; height: 48vmax; top: -20vmax; right: -14vmax; background: rgba(24, 95, 165, .42); animation: float-1 36s linear infinite; }
-.b2 { width: 44vmax; height: 44vmax; bottom: -20vmax; left: -14vmax; background: rgba(12, 68, 124, .34); animation: float-2 40s linear infinite; }
+.b1 {
+  width: 48vmax;
+  height: 48vmax;
+  top: -20vmax;
+  right: -14vmax;
+  background: rgba(24, 95, 165, 0.42);
+  animation: float-1 36s linear infinite;
+}
+.b2 {
+  width: 44vmax;
+  height: 44vmax;
+  bottom: -20vmax;
+  left: -14vmax;
+  background: rgba(12, 68, 124, 0.34);
+  animation: float-2 40s linear infinite;
+}
 
 /* The glows keep to opposite sides of the screen (b1 along the top and right, b2 along
    the bottom and left), so their soft edges graze each other instead of merging.
    Different loop lengths keep the pattern from repeating. Keyframe times are
    proportional to each segment's length, so the speed stays constant. */
 @keyframes float-1 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  28% { transform: translate3d(-28vmax, 8vmax, 0) scale(1.15); }
-  40% { transform: translate3d(-38vmax, -1vmax, 0) scale(.95); }
-  75% { transform: translate3d(-12vmax, 24vmax, 0) scale(1.1); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  28% {
+    transform: translate3d(-28vmax, 8vmax, 0) scale(1.15);
+  }
+  40% {
+    transform: translate3d(-38vmax, -1vmax, 0) scale(0.95);
+  }
+  75% {
+    transform: translate3d(-12vmax, 24vmax, 0) scale(1.1);
+  }
 }
 @keyframes float-2 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  29% { transform: translate3d(32vmax, -10.5vmax, 0) scale(1.1); }
-  44% { transform: translate3d(42vmax, 3.5vmax, 0) scale(.92); }
-  75% { transform: translate3d(18vmax, -22.5vmax, 0) scale(1.08); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  29% {
+    transform: translate3d(32vmax, -10.5vmax, 0) scale(1.1);
+  }
+  44% {
+    transform: translate3d(42vmax, 3.5vmax, 0) scale(0.92);
+  }
+  75% {
+    transform: translate3d(18vmax, -22.5vmax, 0) scale(1.08);
+  }
 }
 
 /* ---------- Header ---------- */
@@ -93,17 +138,23 @@ a:focus-visible {
   margin: 0 auto;
 }
 
-.brand { font-weight: 600; }
+.brand {
+  font-weight: 600;
+}
 
 .nav nav {
   display: flex;
   gap: 24px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
-.nav nav a { transition: color .2s ease; }
-.nav nav a:hover { color: var(--ink); }
+.nav nav a {
+  transition: color 0.2s ease;
+}
+.nav nav a:hover {
+  color: var(--ink);
+}
 
 /* ---------- Hero layout ---------- */
 .hero {
@@ -124,7 +175,7 @@ h1 {
   font-size: clamp(2.5rem, 6vw, 3.6rem);
   font-weight: 500;
   line-height: 1.08;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 
 .intro p {
@@ -142,10 +193,12 @@ h1 {
   background: var(--accent);
   color: var(--on-accent);
   font-weight: 600;
-  font-size: .95rem;
-  transition: filter .2s ease;
+  font-size: 0.95rem;
+  transition: filter 0.2s ease;
 }
-.btn:hover { filter: brightness(1.1); }
+.btn:hover {
+  filter: brightness(1.1);
+}
 
 /* ---------- Project list ---------- */
 .work-head {
@@ -153,7 +206,7 @@ h1 {
   justify-content: space-between;
   align-items: baseline;
   padding: 0 12px 10px;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .work-head h2 {
   margin: 0;
@@ -161,7 +214,9 @@ h1 {
   font-weight: 500;
   color: var(--faint);
 }
-.work-head a { color: var(--accent); }
+.work-head a {
+  color: var(--accent);
+}
 .work-head a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -181,9 +236,11 @@ h1 {
   align-items: center;
   gap: 14px;
   padding: 11px 12px;
-  border: .5px solid transparent;
+  border: 0.5px solid transparent;
   border-radius: 10px;
-  transition: background .2s ease, border-color .2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 .pr:hover {
   background: var(--hover);
@@ -198,8 +255,8 @@ h1 {
   place-items: center;
   border-radius: 9px;
   color: var(--accent);
-  background: rgba(133, 183, 235, .1);
-  border: .5px solid rgba(133, 183, 235, .25);
+  background: rgba(133, 183, 235, 0.1);
+  border: 0.5px solid rgba(133, 183, 235, 0.25);
 }
 
 .pr svg {
@@ -215,25 +272,47 @@ h1 {
 .pr .go {
   margin-left: auto;
   color: var(--faint);
-  transition: transform .2s ease, color .2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 .pr:hover .go {
   color: var(--accent);
   transform: translate(2px, -2px);
 }
 
-.pr strong { display: block; font-size: 1rem; font-weight: 500; }
-.pr small  { display: block; margin-top: 1px; font-size: .8rem; color: var(--muted); }
+.pr strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.pr small {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
 
 /* ---------- Mobile ---------- */
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; padding-top: 40px; }
-  .intro p { max-width: 36ch; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+  .intro p {
+    max-width: 36ch;
+  }
 }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .blob { animation: none !important; }
-  * { transition: none !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  .blob {
+    animation: none !important;
+  }
+  * {
+    transition: none !important;
+  }
 }
