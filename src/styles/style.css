@@ -280,8 +280,9 @@ h1 {
   }
 }
 
-/* Static glows on small screens (saves battery, avoids jank) */
-@media (max-width: 699.98px) {
+/* Glows only animate on screens wider than 800px; static below that
+   (saves battery, avoids jank on phones and small tablets) */
+@media (max-width: 800px) {
   .blob {
     animation: none;
   }
