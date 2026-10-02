@@ -1,17 +1,8 @@
 /* ==========================================================
-   rychenjones.com — style.css (universal stylesheet)
-   Link this one file from every page.
-
-   1. Tokens        5. Header / nav       9. Home: intro + list
-   2. Reset/base    6. Layout helpers    10. Projects page
-   3. Page + glows  7. Buttons           11. Footer
-   4. Animation     8. Home: hero        12. Responsive + motion
+   rychenjones.com — styles.css
    ========================================================== */
 
-/* ---------- 1. Tokens ---------- */
 :root {
-  /* colour */
-  --bg: #04060c;
   --ink: #e8eef7;
   --muted: #9fb1cc;
   --faint: #6f829e;
@@ -19,23 +10,8 @@
   --on-accent: #04162b;
   --line: rgba(255, 255, 255, 0.12);
   --hover: rgba(255, 255, 255, 0.06);
-  --accent-soft: rgba(133, 183, 235, 0.1);
-  --accent-line: rgba(133, 183, 235, 0.25);
-
-  /* type */
-  --font:
-    "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-
-  /* shape + layout */
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --maxw: 1040px;
-  --gutter: clamp(20px, 5vw, 56px);
-  --ease: 0.2s ease;
 }
 
-/* ---------- 2. Reset / base ---------- */
 *,
 *::before,
 *::after {
@@ -50,9 +26,15 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  font-family: var(--font);
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   line-height: 1.5;
-  background-color: var(--bg);
+  background-color: #04060c;
 }
 
 a {
@@ -65,19 +47,9 @@ a:focus-visible {
   border-radius: 6px;
 }
 
-h1,
-h2,
-h3,
-p,
-ul {
-  margin: 0;
-}
-ul {
-  padding: 0;
-  list-style: none;
-}
-
-/* ---------- 3. Page + gradient background ---------- */
+/* ---------- Page + animated gradient background ----------
+   The base gradient stays fixed. The .blobs layer (soft drifting colour
+   fields) sits behind the content and moves slowly. */
 .page {
   position: relative;
   isolation: isolate;
@@ -85,20 +57,19 @@ ul {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  padding: 24px var(--gutter) 48px;
+  padding: 24px clamp(20px, 5vw, 56px) 48px;
+  background: linear-gradient(160deg, #04060c 0%, #08101f 50%, #0c1b38 100%);
 }
 
-/* Fixed to the viewport (not the page), so the gradient and glows sit in
-   the same place on every page, whatever its height, and don't scroll. */
 .blobs {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: linear-gradient(160deg, #04060c 0%, #08101f 50%, #0c1b38 100%);
 }
 
+/* Two large soft glows, back at their original corners, drifting widely */
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -122,9 +93,10 @@ ul {
   animation: float-2 40s linear infinite;
 }
 
-/* ---------- 4. Glow animation ----------
-   Glows keep to opposite sides so their edges graze instead of merging.
-   Keyframe times are proportional to segment length (constant speed). */
+/* The glows keep to opposite sides of the screen (b1 along the top and right, b2 along
+   the bottom and left), so their soft edges graze each other instead of merging.
+   Different loop lengths keep the pattern from repeating. Keyframe times are
+   proportional to each segment's length, so the speed stays constant. */
 @keyframes float-1 {
   0%,
   100% {
@@ -156,12 +128,12 @@ ul {
   }
 }
 
-/* ---------- 5. Header / nav ---------- */
+/* ---------- Header ---------- */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: var(--maxw);
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
 }
@@ -176,39 +148,42 @@ ul {
   font-size: 0.9rem;
   color: var(--muted);
 }
+
 .nav nav a {
-  transition: color var(--ease);
+  transition: color 0.2s ease;
 }
-.nav nav a:hover,
-.nav nav a[aria-current="page"] {
+.nav nav a:hover {
   color: var(--ink);
 }
 
-/* ---------- 6. Layout helpers ---------- */
-.container {
+/* ---------- Hero layout ---------- */
+.hero {
   flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+  max-width: 1040px;
   width: 100%;
-  max-width: var(--maxw);
   margin: 0 auto;
-  padding-top: 64px;
+  padding-top: 48px;
 }
 
-.page-head h1 {
-  margin-bottom: 14px;
-}
-.page-head p {
-  max-width: 46ch;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-/* ---------- 7. Buttons + type ---------- */
+/* ---------- Intro ---------- */
 h1 {
+  margin: 0;
   font-size: clamp(2.5rem, 6vw, 3.6rem);
   font-weight: 500;
   line-height: 1.08;
   letter-spacing: -0.02em;
+}
+
+.intro p {
+  margin: 16px 0 28px;
+  max-width: 30ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .btn-group {
@@ -220,23 +195,70 @@ h1 {
 .btn {
   display: inline-block;
   padding: 11px 22px;
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
   background: var(--accent);
   color: var(--on-accent);
   font-weight: 600;
   font-size: 0.95rem;
-  transition: filter var(--ease);
+  transition: filter 0.2s ease;
 }
 .btn:hover {
   filter: brightness(1.1);
 }
+
 .btn-secondary {
   border: 1px solid var(--accent);
   background: transparent;
   color: var(--accent);
 }
 
-/* Shared icon tile styling */
+/* ---------- Project list ---------- */
+.work-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 12px 10px;
+  font-size: 0.8rem;
+}
+.work-head h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 500;
+  color: var(--faint);
+}
+.work-head a {
+  color: var(--accent);
+}
+.work-head a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.work ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 12px;
+  border: 0.5px solid transparent;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+.pr:hover {
+  background: var(--hover);
+  border-color: var(--line);
+}
+
 .tile {
   flex: none;
   width: 38px;
@@ -245,10 +267,11 @@ h1 {
   place-items: center;
   border-radius: 9px;
   color: var(--accent);
-  background: var(--accent-soft);
-  border: 0.5px solid var(--accent-line);
+  background: rgba(133, 183, 235, 0.1);
+  border: 0.5px solid rgba(133, 183, 235, 0.25);
 }
-.tile svg {
+
+.pr svg {
   width: 18px;
   height: 18px;
   fill: none;
@@ -258,31 +281,42 @@ h1 {
   stroke-linejoin: round;
 }
 
-/* ---------- Footer ---------- */
-.footer {
-  max-width: var(--maxw);
-  width: 100%;
-  margin: 64px auto 0;
-  padding-top: 20px;
-  border-top: 0.5px solid var(--line);
-  font-size: 0.8rem;
+.pr .go {
+  margin-left: auto;
   color: var(--faint);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+.pr:hover .go {
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
-/* ---------- Responsive + reduced motion ---------- */
+.pr strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.pr small {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 760px) {
-  .container {
+  .hero {
+    grid-template-columns: 1fr;
     padding-top: 40px;
   }
-}
-
-/* Static glows on small screens (saves battery, avoids jank) */
-@media (max-width: 699.98px) {
-  .blob {
-    animation: none;
+  .intro p {
+    max-width: 36ch;
   }
 }
 
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Rychen Jones</title>
+    <meta
+      name="description"
+      content="Projects by Rychen Jones, a software engineering student building full-stack web apps."
+    />
+    <meta name="theme-color" content="#04060C" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/src/styles/style.css" rel="stylesheet" />
+    <link href="/src/styles/projects.css" rel="stylesheet" />
+    <script type="module" src="/src/js/background.js"></script>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-barbell" viewBox="0 0 24 24">
+        <path
+          d="M2 12h1M6 8H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zM9 12h6M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1zM18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M22 12h-1"
+        />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16" />
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M17 7L7 17M8 7h9v9" />
+      </symbol>
+    </svg>
+
+    <div class="page">
+      <div class="blobs" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+      </div>
+
+      <header class="nav">
+        <a class="brand" href="/">Rychen Jones</a>
+        <nav aria-label="Primary">
+          <a href="/pages/projects.html" aria-current="page">Projects</a>
+          <a href="/pages/about.html">About</a>
+          <a href="/pages/contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main class="container">
+        <section class="page-head">
+          <h1>Projects</h1>
+          <p>
+            Full-stack web apps and a Java program I've built while studying
+            software engineering.
+          </p>
+        </section>
+
+        <ul class="cards">
+          <li class="card">
+            <div class="card-top">
+              <span class="tile"
+                ><svg aria-hidden="true"><use href="#i-barbell"></svg>
+              </span>
+              <div>
+                <h2>RepJournal</h2>
+                <span class="card-sub">Workout tracker</span>
+              </div>
+            </div>
+            <p>
+              A web app for logging workouts and tracking progress over time.
+            </p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">PocketBase</span>
+              <span class="tag">Google Cloud</span>
+            </div>
+            <div class="card-links">
+              <a
+                class="link"
+                href="https://repjournal.rychenjones.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Live site <svg aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="card-top">
+              <span class="tile"
+                ><svg aria-hidden="true"><use href="#i-grid" /></svg>
+              </span>
+              <div>
+                <h2>TrailView</h2>
+                <span class="card-sub">Trail explorer</span>
+              </div>
+            </div>
+            <p>A web app for exploring trails.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Netlify</span>
+            </div>
+            <div class="card-links">
+              <a
+                class="link"
+                href="https://trailview.rychenjones.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Live site <svg aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="card-top">
+              <span class="tile"
+                ><svg aria-hidden="true"><use href="#i-code" /></svg>
+              </span>
+              <div>
+                <h2>Expense Tracker</h2>
+                <span class="card-sub">Java program</span>
+              </div>
+            </div>
+            <p>
+              A Java program for tracking expenses, built around classes and
+              password hashing.
+            </p>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Password hashing</span>
+            </div>
+            <div class="card-links">
+              <a
+                class="link"
+                href="https://github.com/RychenJones/expense-tracker"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Source <svg aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <footer class="footer">
+        <a href="mailto:rychen.p.jones@gmail.com">rychen.p.jones@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a
+          href="https://github.com/rychenjones"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+      </footer>
+    </div>
+  </body>
+</html>
