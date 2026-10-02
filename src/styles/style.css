@@ -112,6 +112,9 @@ ul {
   right: -14vmax;
   background: rgba(24, 95, 165, 0.42);
   animation: float-1 36s linear infinite;
+  /* Negative delay = start part-way through the loop. Longer than the loop
+     is fine: infinite animations just wrap around. */
+  animation-delay: calc(var(--bg-elapsed, 0) * -1s);
 }
 .b2 {
   width: 44vmax;
@@ -120,6 +123,7 @@ ul {
   left: -14vmax;
   background: rgba(12, 68, 124, 0.34);
   animation: float-2 40s linear infinite;
+  animation-delay: calc(var(--bg-elapsed, 0) * -1s);
 }
 
 /* ---------- 4. Glow animation ----------
