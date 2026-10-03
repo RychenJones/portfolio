@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | Rychen Jones</title>
+    <meta
+      name="description"
+      content="About Rychen Jones, a software engineering student building full-stack web apps."
+    />
+    <meta name="theme-color" content="#04060C" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/src/styles/style.css" rel="stylesheet" />
+    <link href="/src/styles/about.css" rel="stylesheet" />
+    <script src="/src/js/background.js" defer></script>
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- Animated background: same soft drifting blobs as the home page -->
+      <div class="blobs" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+      </div>
+
+      <header class="nav">
+        <a class="brand" href="/">Rychen Jones</a>
+        <nav aria-label="Primary">
+          <a href="/pages/projects.html">Projects</a>
+          <a href="/pages/about.html" aria-current="page">About</a>
+          <a href="/pages/contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main class="about">
+        <!-- PHOTO: save your picture as public/images/profile.jpg.
+             Until then, the "RJ" placeholder shows instead. -->
+        <figure class="about-photo">
+          <span class="about-photo-fallback" aria-hidden="true">RJ</span>
+          <img
+            src="/about-photo.jpeg"
+            alt="Photo of Rychen Jones"
+            width="480"
+            height="600"
+            onerror="this.remove()"
+          />
+        </figure>
+
+        <section class="about-text">
+          <h1>About me</h1>
+          <p>
+            I'm a software engineering student who enjoys building software, solving problems, and learning by doing. I like taking an idea from the initial concept through implementation and figuring out how the different pieces fit together.
+          </p>
+          <p>
+            I'm currently studying Software Engineering at BYU-Idaho, with an emphasis in Software Design and a minor in Cloud Computing. Through coursework, personal projects, and leadership opportunities, I've been building a broad foundation in software development while figuring out the areas of engineering I enjoy most.
+          </p>
+          <p>
+            I'm looking for an internship where I can contribute to a professional engineering team, work on meaningful problems, and learn from experienced developers. I'm especially interested in opportunities where I can continue expanding beyond the classroom and gain experience building software that people actually use.
+          </p>
+          <p>
+            Outside of software, I am an avid weightlifter, enjoy being outdoors, and spending time with people I love.
+          </p>
+
+          <div class="btn-group">
+            <a class="btn" href="/pages/contact.html"
+              >Contact me</a
+            >
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/rychenjones"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
